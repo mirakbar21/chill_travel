@@ -1441,44 +1441,82 @@ ul {
 /* 11. expert
 --------------------------------------------------------------------------------*/
 
-.expert:hover .expert__avatar {
-    transform: rotateY(360deg);
+/* expert - общий стиль */
+.expert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 350px;
+  margin: 20px auto;
+  padding: 10px;
 }
 
+/* avatar */
 .expert__avatar {
-    border-radius: 50%;
-    overflow: hidden;
-    width: 80px;
-    height: 80px;
-    float: left;
-    margin-right: 20px;
-    transition: all .8s ease-in-out;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 220px;    /* базовый размер (десктоп) */
+  height: 220px;
+  transition: all 0.8s ease-in-out;
+  margin-bottom: 15px;
 }
 
+.expert__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* текст */
 .expert__body {
-    height: 80px;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-pack: center;
-    justify-content: center;
-    float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .expert__name {
-    font-weight: bold;
-    margin: 0;
+  font-weight: bold;
+  margin: 0 0 5px;
+  font-size: 15px;
+  word-break: break-word;
+  line-height: 1.4;
+  max-width: 90%;
 }
 
-.expert__style-02 .expert__avatar {
-    width: 95px;
-    height: 95px;
+.expert__work {
+  font-size: 13px;
+  color: #777;
+  word-break: break-word;
 }
 
-.expert__style-02 .expert__body {
-    height: 95px;
+/* hover */
+.expert:hover .expert__avatar {
+  transform: rotateY(360deg);
 }
+
+/* 🔽 адаптация под мобилки */
+@media screen and (max-width: 768px) {
+  .expert__avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .expert__name {
+    font-size: 1rem;
+  }
+
+  .expert__work {
+    font-size: 0.85rem;
+  }
+
+  .expert {
+    max-width: 100%;
+  }
+}
+
 
 /* 12. form_item
 --------------------------------------------------------------------------------*/
