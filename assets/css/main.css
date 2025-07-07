@@ -3127,7 +3127,6 @@ ul {
 
 .header__lang {
     float: left;
-    line-height: 60px;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
@@ -3136,6 +3135,9 @@ ul {
 
 .header__lang > a {
     color: #fff;
+    display: inline-flex;     /* ставим flex-контейнер в строковом режиме */
+  align-items: center;      /* вертикальное центрирование содержимого */
+  white-space: nowrap;
 }
 
 .header__lang i {
