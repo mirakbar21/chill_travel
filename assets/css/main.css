@@ -1438,25 +1438,23 @@ ul {
     color: #fff;
 }
 
-/* 11. expert
---------------------------------------------------------------------------------*/
-
-/* expert - общий стиль */
+/* expert - карточка */
 .expert {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   text-align: center;
-  max-width: 350px;
-  margin: 20px auto;
-  padding: 10px;
+  margin: 20px auto; /* отступ сверху/снизу + центрировка */
+  width: max-content; /* сжимается по содержимому */
+  max-width: 100%;
 }
 
 /* avatar */
 .expert__avatar {
   border-radius: 50%;
   overflow: hidden;
-  width: 220px;    /* базовый размер (десктоп) */
+  width: 220px;
   height: 220px;
   transition: all 0.8s ease-in-out;
   margin-bottom: 15px;
@@ -1469,11 +1467,15 @@ ul {
   display: block;
 }
 
+/* hover эффект */
+.expert:hover .expert__avatar {
+  transform: rotateY(360deg);
+}
+
 /* текст */
 .expert__body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -1492,30 +1494,29 @@ ul {
   word-break: break-word;
 }
 
-/* hover */
-.expert:hover .expert__avatar {
-  transform: rotateY(360deg);
-}
-
-/* 🔽 адаптация под мобилки */
+/* адаптация под мобилки */
 @media screen and (max-width: 768px) {
+  .expert {
+    width: 100%;
+    margin: 20px auto;
+  }
+
   .expert__avatar {
     width: 150px;
     height: 150px;
   }
 
   .expert__name {
-    font-size: 1rem;
+    font-size: 20px;
   }
 
   .expert__work {
-    font-size: 0.85rem;
-  }
-
-  .expert {
-    max-width: 100%;
+    font-size: 15px;
   }
 }
+
+
+
 
 
 /* 12. form_item
